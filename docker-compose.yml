@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  sms-api-service:
+    container_name: sms-api-container
+    image: image_sms_api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./application.properties:/app/application.properties
+    restart: always
